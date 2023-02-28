@@ -34,12 +34,23 @@ if (Player1Input == 0){
 System.out.println(newarr);
 }
 
-static void Board(){ //create a 3x3 board, first step
-    char[][] board = new char[3][3]; 
+static void Board(){ 
 
-    for (int i = 0; i <= board.length; i++){
-        System.out.println(board[]); 
-    }
+    char[][] gameBoard = {{' ', '|', ' ', '|', ' '},
+                        {'-', '+', '-', '+', '-'},
+                        {' ', '|', ' ', '|', ' '},
+                        {'-', '+', '-', '+', '-'},
+                        {' ', '|', ' ', '|', ' '}};
+    //im trying to understand why this is a array though. I think because each section might have a specfic index... not sure
+
+        for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+            for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+    // now I have to figure out how to like place a certain x or o in the correct part of the board
+
 }
 
 public static void main(String[] args){
