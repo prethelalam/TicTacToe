@@ -35,6 +35,8 @@ System.out.println(newarr);
 }
 
 static void Board(){ 
+    System.out.println("Welcome to tic tac toe. Player 1 will be X and player 2 will be O. Good luck!");
+    System.out.println();
 
     char[][] gameBoard = {{' ', '|', ' ', '|', ' '},
                         {'-', '+', '-', '+', '-'},
@@ -50,11 +52,56 @@ static void Board(){
             System.out.println();
         }
     // now I have to figure out how to like place a certain x or o in the correct part of the board
+}
+
+static void turns(){
+    System.out.println("Player 1, please make the first move.");
+    System.out.print("What row would you like your X to be placed?");
+
+    Scanner scan1 = new Scanner(System.in);
+    int input = scan1.nextInt();
+
+    System.out.print("What column would you like your X to be placed?");
+    int input2 = scan1.nextInt();
+
+    //this is where you update the gameboard
+
+    System.out.println("Player 2, please make your move.");
+    System.out.print("What row would you like your O to be placed?");
+
+    int input3 = scan1.nextInt();
+
+    System.out.print("What column would you like your O to be placed?");
+    int input4 = scan1.nextInt();
+
+    //this is where you update the gameboard
+
+    //MAYBE MAKE A WHILE LOOP FOR taking turns? and we can set the condition until someone wins or loses or ties
+
+//1. figure out where each index is, and be able to assign an X or O to that index in the gameboard array
+//2. print that X or O to in the gameboard array
+//3. Set up invalid games, such as O and X can't both win
+//4. need to set up options for winning, losing, and tying
+//5. create a interface for it (GUI)
+
+    // String row, column;
+    // switch (input & input2){
+    //     if (input | input2 == gameBoard[0][1]){
+    //         case 1: gameBoard[0][1] = "X";
+    //         System.out.println(gameBoard[0][1]);
+    //     }
+        
+    // }
+
 
 }
+
+
+
 
 public static void main(String[] args){
 //Array();
 Board();
+Turns();
 }
 }
