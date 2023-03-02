@@ -52,39 +52,77 @@ static void Board(){
             System.out.println();
         }
     // now I have to figure out how to like place a certain x or o in the correct part of the board
-}
+    
 
+    // while (counter <= 5) /*|| need another condition for winner*/{
+    // System.out.print("Player 1, where would you like your X to be placed: top left = 00, top middle = 01, top riddle = 02, middle left = 10, etc.. ");
 
-static void turns(){
+    // Scanner scan1 = new Scanner(System.in);
+    // int input = scan1.nextInt();
+
+    // //this is where you update the gameboard
+
+    // System.out.print("Player 2, where would you like your X to be placed: top left, top middle, top riddle, etc.. ");
+    // input = scan1.nextInt();
+
+    // counter++;
+    // }
     int counter = 0;
 
-    while (counter <= 5) /*|| need another condition for winner*/{
-    System.out.print("Player 1, where would you like your X to be placed: top left, top middle, top riddle, etc..: ");
+    for (int i = 0; counter <= 4; i++){
 
-    Scanner scan1 = new Scanner(System.in);
-    String input = scan1.nextLine();
+        System.out.print("Player 1, where would you like your X to be placed: top left = 00, top middle = 01, top riddle = 02, middle left = 10, etc.. ");
 
-    //this is where you update the gameboard
+        Scanner scan1 = new Scanner(System.in);
+        int input = scan1.nextInt();
 
-    System.out.print("Player 2, where would you like your X to be placed: top left, top middle, top riddle, etc.. ");
+        // System.out.print("Player 2, where would you like your X to be placed: top left, top middle, top riddle, etc.. ");
+        // input = scan1.nextInt();
 
-    input = scan1.nextLine();
-
-    counter++;
-    }
-}
-
-static void Options(){
-int counter = 0;
-    for (int i = 0; counter <= 5; i++){
-        switch (){
-            if (input == "top left" ){
-            case 1: 
+        switch (counter){ //need to have this put x or o depending on if player 1 or 2 selects this spot
+            case 00: gameBoard[0][0] = 'X' | 'O';
+            for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+            for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
             }
+            System.out.println();
+        }
         }
         counter++;
     }
 }
+
+
+// static void turns(){
+//     int counter = 0;
+
+//     while (counter <= 5) /*|| need another condition for winner*/{
+//     System.out.print("Player 1, where would you like your X to be placed: top left = 00, top middle = 01, top riddle = 02, middle left = 10, etc.. ");
+
+//     Scanner scan1 = new Scanner(System.in);
+//     int input = scan1.nextInt();
+
+//     //this is where you update the gameboard
+
+//     System.out.print("Player 2, where would you like your X to be placed: top left, top middle, top riddle, etc.. ");
+
+//     input = scan1.nextInt();
+
+//     counter++;
+//     }
+//     }
+    
+
+// static void Options(char [][] gameBoard){
+// int counter = 0;
+//     for (int i = 0; counter <= 5; i++){
+//         switch (counter){
+//             case 00: gameBoard[0][0] = "X";
+            
+//         }
+//         counter++;
+//     }
+// }
 
     //this is where you update the gameboard
 
@@ -130,9 +168,10 @@ int counter = 0;
 
 public static void main(String[] args){
 //Array();
-// Board();
+Board();
 // System.out.println();
-turns();
+//turns();
+
 
 int newarr[][] = {{1,2,3}, {4,5,6}};
 
