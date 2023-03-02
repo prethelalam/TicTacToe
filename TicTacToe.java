@@ -54,25 +54,37 @@ static void Board(){
     // now I have to figure out how to like place a certain x or o in the correct part of the board
 }
 
+
 static void turns(){
-    System.out.println("Player 1, please make the first move.");
-    System.out.print("What row would you like your X to be placed?");
+    int counter = 0;
+
+    while (counter <= 5) /*|| need another condition for winner*/{
+    System.out.print("Player 1, where would you like your X to be placed: top left, top middle, top riddle, etc..: ");
 
     Scanner scan1 = new Scanner(System.in);
-    int input = scan1.nextInt();
-
-    System.out.print("What column would you like your X to be placed?");
-    int input2 = scan1.nextInt();
+    String input = scan1.nextLine();
 
     //this is where you update the gameboard
 
-    System.out.println("Player 2, please make your move.");
-    System.out.print("What row would you like your O to be placed?");
+    System.out.print("Player 2, where would you like your X to be placed: top left, top middle, top riddle, etc.. ");
 
-    int input3 = scan1.nextInt();
+    input = scan1.nextLine();
 
-    System.out.print("What column would you like your O to be placed?");
-    int input4 = scan1.nextInt();
+    counter++;
+    }
+}
+
+static void Options(){
+int counter = 0;
+    for (int i = 0; counter <= 5; i++){
+        switch (){
+            if (input == "top left" ){
+            case 1: 
+            }
+        }
+        counter++;
+    }
+}
 
     //this is where you update the gameboard
 
@@ -84,6 +96,23 @@ static void turns(){
 //4. need to set up options for winning, losing, and tying
 //5. create a interface for it (GUI)
 
+//steps for gameboard:
+/* 1. player 1 does a move
+    2. gameboard reflects said move
+    3. updated gameboard is shown to player 2
+    4. player to selects a move
+    5. updated gameboard is shown to player 1
+    6. repeat
+    */
+
+//Questions:
+        /*
+        - how to use a switch with a 2d array  
+	    - how to know where an index is in a 2d array 
+	    - how to update a 2d array with new elements, hard code? literally manually do it your self (lots of hard coding tho)… check it out anyways 
+	    - while loop with a counter till it reaches 9 or someone wins */
+
+
     // String row, column;
     // switch (input & input2){
     //     if (input | input2 == gameBoard[0][1]){
@@ -94,14 +123,19 @@ static void turns(){
     // }
 
 
-}
+
 
 
 
 
 public static void main(String[] args){
 //Array();
-Board();
-Turns();
+// Board();
+// System.out.println();
+turns();
+
+int newarr[][] = {{1,2,3}, {4,5,6}};
+
+System.out.print(newarr[0][1]); //prints 2
 }
 }
