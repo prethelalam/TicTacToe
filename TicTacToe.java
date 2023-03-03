@@ -143,12 +143,33 @@ static void Board(){
                 System.out.println();
         }
         break;
-
-        //set up conditions to win, lose, and tie. maybe also create and infinite loop(while loop) to play the game again once it ends
-            if (gameBoard[0][0] & gameBoard[0][2] & gameBoard[0][4] == true){
-
-            }
     }
+//set up conditions to win, lose, and tie. maybe also create and infinite loop(while loop) to play the game again once it ends
+
+        //X winning: 
+        if (gameBoard[0][0] == 'X'){ //this is winning by only top row
+            if (gameBoard[0][2] == 'X'){
+                if (gameBoard[0][4] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+                    break; 
+                }
+            }
+            }
+        
+        
+        //O winning: set it up the same as X winning
+        if (gameBoard[0][0] == 'O'){ //this is winning by only top row
+            if (gameBoard[0][2] == 'O'){
+                if (gameBoard[0][4] == 'O'){
+                    System.out.println("Congrats player 2, you have won!");
+                    System.out.println("Good try player 1!");
+                    break; 
+                }       //TEST THIS AND SET UP THE REST OF THE WAYS TO WIN
+            }
+            }
+
+        //set up tying
 
     //Player 2 input and switch statements
         System.out.println("Player 2, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 44, and bottom right = 44.");
