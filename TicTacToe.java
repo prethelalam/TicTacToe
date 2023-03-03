@@ -45,33 +45,18 @@ static void Board(){
                         {' ', '|', ' ', '|', ' '}};
     //im trying to understand why this is a array though. I think because each section might have a specfic index... not sure
 
-        for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
-            for (char c: row){ //this loops each character in the current row
-                System.out.print(c);
+    for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+        for (char c: row){ //this loops each character in the current row
+            System.out.print(c);
             }
             System.out.println();
         }
-    // now I have to figure out how to like place a certain x or o in the correct part of the board
     
-
-    // while (counter <= 5) /*|| need another condition for winner*/{
-    // System.out.print("Player 1, where would you like your X to be placed: top left = 00, top middle = 01, top riddle = 02, middle left = 10, etc.. ");
-
-    // Scanner scan1 = new Scanner(System.in);
-    // int input = scan1.nextInt();
-
-    // //this is where you update the gameboard
-
-    // System.out.print("Player 2, where would you like your X to be placed: top left, top middle, top riddle, etc.. ");
-    // input = scan1.nextInt();
-
-    // counter++;
-    // }
     int counter = 0;
 
     for (int i = 0; counter <= 4; i++){
         //Player 1 input and switch statements
-        System.out.print("Player 1, where would you like your X to be placed: top left = 00, top middle = 01, top riddle = 02, middle left = 10, etc.. ");
+        System.out.println("Player 1, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 44, and bottom right = 44");
 
         Scanner scan1 = new Scanner(System.in);
         int input = scan1.nextInt();
@@ -158,10 +143,15 @@ static void Board(){
                 System.out.println();
         }
         break;
+
+        //set up conditions to win, lose, and tie. maybe also create and infinite loop(while loop) to play the game again once it ends
+            if (gameBoard[0][0] & gameBoard[0][2] & gameBoard[0][4] == true){
+
+            }
     }
 
     //Player 2 input and switch statements
-        System.out.print("Player 2, where would you like your X to be placed: top left, top middle, top riddle, etc.. ");
+        System.out.println("Player 2, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 44, and bottom right = 44.");
         int input2 = scan1.nextInt();
 
 
@@ -248,42 +238,9 @@ static void Board(){
         break;
     }
     counter++;
+    }
 }
-}
 
-
-// static void turns(){
-//     int counter = 0;
-
-//     while (counter <= 5) /*|| need another condition for winner*/{
-//     System.out.print("Player 1, where would you like your X to be placed: top left = 00, top middle = 01, top riddle = 02, middle left = 10, etc.. ");
-
-//     Scanner scan1 = new Scanner(System.in);
-//     int input = scan1.nextInt();
-
-//     //this is where you update the gameboard
-
-//     System.out.print("Player 2, where would you like your X to be placed: top left, top middle, top riddle, etc.. ");
-
-//     input = scan1.nextInt();
-
-//     counter++;
-//     }
-//     }
-    
-
-// static void Options(char [][] gameBoard){
-// int counter = 0;
-//     for (int i = 0; counter <= 5; i++){
-//         switch (counter){
-//             case 00: gameBoard[0][0] = "X";
-            
-//         }
-//         counter++;
-//     }
-// }
-
-    //this is where you update the gameboard
 
     //MAYBE MAKE A WHILE LOOP FOR taking turns? and we can set the condition until someone wins or loses or ties
 
@@ -308,20 +265,6 @@ static void Board(){
 	    - how to know where an index is in a 2d array 
 	    - how to update a 2d array with new elements, hard code? literally manually do it your self (lots of hard coding tho)… check it out anyways 
 	    - while loop with a counter till it reaches 9 or someone wins */
-
-
-    // String row, column;
-    // switch (input & input2){
-    //     if (input | input2 == gameBoard[0][1]){
-    //         case 1: gameBoard[0][1] = "X";
-    //         System.out.println(gameBoard[0][1]);
-    //     }
-        
-    // }
-
-
-
-
 
 
 
