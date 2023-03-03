@@ -70,57 +70,183 @@ static void Board(){
     int counter = 0;
 
     for (int i = 0; counter <= 4; i++){
-
+        //Player 1 input and switch statements
         System.out.print("Player 1, where would you like your X to be placed: top left = 00, top middle = 01, top riddle = 02, middle left = 10, etc.. ");
 
         Scanner scan1 = new Scanner(System.in);
         int input = scan1.nextInt();
 
-          switch (input){ //need to have this put x or o depending on if player 1 or 2 selects this spot
-            case 00: gameBoard[0][0] = 'X';
+        switch (input){ //need to have this put x or o depending on if player 1 or 2 selects this spot
+            case 00: gameBoard[0][0] = 'X'; //top left
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
                 }
                 System.out.println();
-                continue;
+                
         }
-            case 02: gameBoard[0][2] = 'X';
-                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
-                for (char c: row){ //this loops each character in the current row
-                System.out.print(c);
-                }
-                System.out.println();
-                continue;
+        break;
 
+            case 02: gameBoard[0][2] = 'X'; //top middle
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
         }
+        break;
+
+            case 04: gameBoard[0][4] = 'X'; //top right
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
+
+            case 20: gameBoard[2][0] = 'X'; //middle left
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
+
+            case 22: gameBoard[2][2] = 'X'; //middle middle
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
+
+            case 24: gameBoard[2][4] = 'X'; //middle right
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
+
+            case 40: gameBoard[4][0] = 'X'; //bottom left
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
+
+            case 42: gameBoard[4][2] = 'X'; //bottom middle
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
+
+            case 44: gameBoard[4][4] = 'X'; //bottom right
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
     }
+
+    //Player 2 input and switch statements
         System.out.print("Player 2, where would you like your X to be placed: top left, top middle, top riddle, etc.. ");
         int input2 = scan1.nextInt();
 
 
         switch(input2){ //this workish, overrides and prints 2 seperate game boards 
-            case 00: gameBoard[0][0] = 'O';
+            case 00: gameBoard[0][0] = 'O'; //top left
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
                 }
                 System.out.println();
-                continue;
         }
+        break;
 
-            case 02: gameBoard[0][2] = 'O';
+            case 02: gameBoard[0][2] = 'O'; //top middle
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
                 }
                 System.out.println();
-                continue;
         }
-            
+        break;
+
+            case 04: gameBoard[0][4] = 'O'; //top right
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
         }
-        
-    
+        break;
+
+            case 20: gameBoard[2][0] = 'O'; //middle left
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
+
+            case 22: gameBoard[2][2] = 'O'; //middle middle
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
+
+            case 24: gameBoard[2][4] = 'O'; //middle right
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
+
+            case 40: gameBoard[4][0] = 'O'; //bottom left
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
+
+            case 42: gameBoard[4][2] = 'O'; //bottom middle
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
+
+            case 44: gameBoard[4][4] = 'O'; //bottom right
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char c: row){ //this loops each character in the current row
+                System.out.print(c);
+                }
+                System.out.println();
+        }
+        break;
+    }
     counter++;
 }
 }
@@ -200,10 +326,7 @@ static void Board(){
 
 
 public static void main(String[] args){
-//Array();
 Board();
-// System.out.println();
-//turns();
 
 
 int newarr[][] = {{1,2,3}, {4,5,6}};
