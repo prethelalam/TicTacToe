@@ -60,6 +60,7 @@ static void Board(){
 
         Scanner scan1 = new Scanner(System.in);
         int input = scan1.nextInt();
+        System.out.println();
 
         switch (input){ //need to have this put x or o depending on if player 1 or 2 selects this spot
             case 00: gameBoard[0][0] = 'X'; //top left
@@ -70,6 +71,7 @@ static void Board(){
                 System.out.println();
                 
         }
+        System.out.println();
         break;
 
             case 02: gameBoard[0][2] = 'X'; //top middle
@@ -79,6 +81,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 04: gameBoard[0][4] = 'X'; //top right
@@ -88,6 +91,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 20: gameBoard[2][0] = 'X'; //middle left
@@ -97,6 +101,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 22: gameBoard[2][2] = 'X'; //middle middle
@@ -106,6 +111,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 24: gameBoard[2][4] = 'X'; //middle right
@@ -115,6 +121,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 40: gameBoard[4][0] = 'X'; //bottom left
@@ -124,6 +131,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 42: gameBoard[4][2] = 'X'; //bottom middle
@@ -133,6 +141,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 44: gameBoard[4][4] = 'X'; //bottom right
@@ -142,12 +151,13 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
     }
 //set up conditions to win, lose, and tie. maybe also create and infinite loop(while loop) to play the game again once it ends
 
         //X winning: 
-        if (gameBoard[0][0] == 'X'){ //this is winning by only top row
+        if (gameBoard[0][0] == 'X'){ //this is winning top row across
             if (gameBoard[0][2] == 'X'){
                 if (gameBoard[0][4] == 'X'){
                     System.out.println("Congrats player 1, you have won!");
@@ -156,24 +166,60 @@ static void Board(){
                 }
             }
             }
-        
-        
-        //O winning: set it up the same as X winning
-        if (gameBoard[0][0] == 'O'){ //this is winning by only top row
-            if (gameBoard[0][2] == 'O'){
-                if (gameBoard[0][4] == 'O'){
-                    System.out.println("Congrats player 2, you have won!");
-                    System.out.println("Good try player 1!");
+        if (gameBoard[2][0] == 'X'){ //this is winning middle row across
+            if (gameBoard[2][2] == 'X'){
+                if (gameBoard[2][4] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
                     break; 
-                }       //TEST THIS AND SET UP THE REST OF THE WAYS TO WIN
+                }
             }
             }
+        if (gameBoard[4][0] == 'X'){ //this is winning bottom row across
+            if (gameBoard[4][2] == 'X'){
+                if (gameBoard[4][4] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+                    break; 
+                }
+            }
+            }
+        if (gameBoard[0][0] == 'X'){ //this is winning top column down
+            if (gameBoard[2][0] == 'X'){
+                if (gameBoard[4][0] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+                    break; 
+                }
+            }
+            }
+        if (gameBoard[0][2] == 'X'){ //this is winning middle column down
+            if (gameBoard[2][2] == 'X'){
+                if (gameBoard[4][2] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+                    break; 
+                }
+            }
+            }
+        if (gameBoard[0][4] == 'X'){ //this is winning bottom column down
+            if (gameBoard[2][4] == 'X'){
+                if (gameBoard[4][4] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+                    break; 
+                }
+            }
+            }
+
+        //set up both across
 
         //set up tying
 
     //Player 2 input and switch statements
         System.out.println("Player 2, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 44, and bottom right = 44.");
         int input2 = scan1.nextInt();
+        System.out.println();
 
 
         switch(input2){ //this workish, overrides and prints 2 seperate game boards 
@@ -184,6 +230,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 02: gameBoard[0][2] = 'O'; //top middle
@@ -193,6 +240,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 04: gameBoard[0][4] = 'O'; //top right
@@ -202,6 +250,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 20: gameBoard[2][0] = 'O'; //middle left
@@ -211,6 +260,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 22: gameBoard[2][2] = 'O'; //middle middle
@@ -220,6 +270,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 24: gameBoard[2][4] = 'O'; //middle right
@@ -229,6 +280,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 40: gameBoard[4][0] = 'O'; //bottom left
@@ -238,6 +290,7 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
         break;
 
             case 42: gameBoard[4][2] = 'O'; //bottom middle
@@ -247,6 +300,8 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
+
         break;
 
             case 44: gameBoard[4][4] = 'O'; //bottom right
@@ -256,8 +311,69 @@ static void Board(){
                 }
                 System.out.println();
         }
+        System.out.println();
+
         break;
     }
+
+    //O winning: set it up the same as X winning
+        if (gameBoard[0][0] == 'O'){ //this is winning top row across
+            if (gameBoard[0][2] == 'O'){
+                if (gameBoard[0][4] == 'O'){
+                    System.out.println("Congrats player 2, you have won!");
+                    System.out.println("Good try player 1!");
+                    break; 
+                }       //TEST THIS AND SET UP THE REST OF THE WAYS TO WIN
+            }
+            }
+        if (gameBoard[2][0] == 'O'){ //this is winning middle row across
+            if (gameBoard[2][2] == 'O'){
+                if (gameBoard[2][4] == 'O'){
+                    System.out.println("Congrats player 2, you have won!");
+                    System.out.println("Good try player 1!");
+                    break; 
+                }
+            }
+            }
+        if (gameBoard[4][0] == 'O'){ //this is winning bottom row across
+            if (gameBoard[4][2] == 'O'){
+                if (gameBoard[4][4] == 'O'){
+                    System.out.println("Congrats player 2, you have won!");
+                    System.out.println("Good try player 1!");
+                    break; 
+                }
+            }
+            }
+        if (gameBoard[0][0] == 'O'){ //this is winning top column down
+            if (gameBoard[2][0] == 'O'){
+                if (gameBoard[4][0] == 'O'){
+                    System.out.println("Congrats player 2, you have won!");
+                    System.out.println("Good try player 1!");
+                    break; 
+                }
+            }
+            }
+        if (gameBoard[0][2] == 'O'){ //this is winning middle column down
+            if (gameBoard[2][2] == 'O'){
+                if (gameBoard[4][2] == 'O'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+                    break; 
+                }
+            }
+            }
+        if (gameBoard[0][4] == 'O'){ //this is winning bottom column down
+            if (gameBoard[2][4] == 'O'){
+                if (gameBoard[4][4] == 'O'){
+                    System.out.println("Congrats player 2, you have won!");
+                    System.out.println("Good try player 1!");
+                    break; 
+                }
+            }
+            }
+
+        //set up both across
+            
     counter++;
     }
 }
