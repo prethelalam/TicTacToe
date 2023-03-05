@@ -211,8 +211,25 @@ static void Board(){
                 }
             }
             }
+        if (gameBoard[0][0] == 'X'){ //diagnoal starting from top left to bottom right
+            if (gameBoard[2][2] == 'X'){
+                if (gameBoard[4][4] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+                    break; 
+                }
+            }
+            }
+        if (gameBoard[0][4] == 'X'){ //diagnoal starting from top right to bottom left
+            if (gameBoard[2][2] == 'X'){
+                if (gameBoard[4][0] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+                    break; 
+                }
+            }
+            }
 
-        //set up both across
 
         //set up tying
 
@@ -365,6 +382,24 @@ static void Board(){
         if (gameBoard[0][4] == 'O'){ //this is winning bottom column down
             if (gameBoard[2][4] == 'O'){
                 if (gameBoard[4][4] == 'O'){
+                    System.out.println("Congrats player 2, you have won!");
+                    System.out.println("Good try player 1!");
+                    break; 
+                }
+            }
+            }
+        if (gameBoard[0][0] == 'O'){ //diagnoal starting from top left to bottom right
+            if (gameBoard[2][2] == 'O'){
+                if (gameBoard[4][4] == 'O'){
+                    System.out.println("Congrats player 2, you have won!");
+                    System.out.println("Good try player 1!");
+                    break; 
+                }
+            }
+            }
+        if (gameBoard[0][4] == 'O'){ //diagnoal starting from top right to bottom left
+            if (gameBoard[2][2] == 'O'){
+                if (gameBoard[4][0] == 'O'){
                     System.out.println("Congrats player 2, you have won!");
                     System.out.println("Good try player 1!");
                     break; 
