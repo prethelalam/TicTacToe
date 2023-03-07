@@ -22,10 +22,11 @@ static void Board(){
             }
             System.out.println();
         }
+        System.out.println();
     
     int counter = 0;
 
-    for (int i = 0; counter <= 9; i++){
+    for (int i = 0; counter <= 3.5; i++){ // i feel like i have to change the condition for the for loop. 3 is not enough but 4 is too much??
         //Player 1 input and switch statements
         System.out.println("Player 1, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 42, and bottom right = 44");
 
@@ -376,7 +377,8 @@ static void Board(){
             }
             counter++;
         }
-    
+        System.out.println("You have tied");
+            //maybe create rows and columns variable and set indexes equal too it, then use the row to have it tie
     
 }
 
@@ -402,8 +404,8 @@ static void Board(){
 //Questions:
         /*
         - how to use a switch with a 2d array  
-	    - how to know where an index is in a 2d array 
-	    - how to update a 2d array with new elements, hard code? literally manually do it your self (lots of hard coding tho)… check it out anyways 
+        - how to know where an index is in a 2d array 
+        - how to update a 2d array with new elements, hard code? literally manually do it your self (lots of hard coding tho)… check it out anyways 
 	    - while loop with a counter till it reaches 9 or someone wins */
 
 
