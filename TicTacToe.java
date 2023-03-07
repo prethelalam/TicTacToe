@@ -6,34 +6,6 @@ public class TicTacToe{
 
 //set up a gui in order to make the game run like a typical tic tac toe game
 
-static void Array(){
-Integer[] newarr = {1,2,3,4,5,6,7,8,9}; //put 9 different sections in here
-
-System.out.println(newarr[0] + " " + newarr[1] + " " + newarr[2]); 
-System.out.println(newarr[3] + " " + newarr[4] + " " + newarr[5]);
-System.out.println(newarr[6] + " " + newarr[7] + " " + newarr[8]);
-
-System.out.println(newarr);
-
-System.out.println("Player 1, select which number you would place your move: ");
-
-Scanner scan1 = new Scanner(System.in);
-int Player1Input = scan1.nextInt();
-
-System.out.println("Player 2, select which number you would like to place your move: ");
-
-Scanner scan2 = new Scanner(System.in);
-int Player2Input = scan1.nextInt();
-
-if (Player1Input == 0){
-    System.out.println(newarr[0] + " " + newarr[1] + " " + newarr[2]); 
-    System.out.println(newarr[3] + " " + newarr[4] + " " + newarr[5]);
-    System.out.println(newarr[6] + " " + newarr[7] + " " + newarr[8]);
-}
-
-System.out.println(newarr);
-}
-
 static void Board(){ 
     System.out.println("Welcome to tic tac toe. Player 1 will be X and player 2 will be O. Good luck!");
     System.out.println();
@@ -43,7 +15,6 @@ static void Board(){
                         {' ', '|', ' ', '|', ' '},
                         {'-', '+', '-', '+', '-'},
                         {' ', '|', ' ', '|', ' '}};
-    //im trying to understand why this is a array though. I think because each section might have a specfic index... not sure
 
     for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
         for (char c: row){ //this loops each character in the current row
@@ -54,9 +25,9 @@ static void Board(){
     
     int counter = 0;
 
-    for (int i = 0; counter <= 4; i++){
+    for (int i = 0; counter <= 9; i++){
         //Player 1 input and switch statements
-        System.out.println("Player 1, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 44, and bottom right = 44");
+        System.out.println("Player 1, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 42, and bottom right = 44");
 
         Scanner scan1 = new Scanner(System.in);
         int input = scan1.nextInt();
@@ -154,8 +125,7 @@ static void Board(){
         System.out.println();
         break;
     }
-//set up conditions to win, lose, and tie. maybe also create and infinite loop(while loop) to play the game again once it ends
-
+        //set up conditions to win, lose, and tie. maybe also create and infinite loop(while loop) to play the game again once it ends
         //X winning: 
         if (gameBoard[0][0] == 'X'){ //this is winning top row across
             if (gameBoard[0][2] == 'X'){
@@ -229,15 +199,15 @@ static void Board(){
                 }
             }
             }
-
+    
+        
 
         //set up tying
 
     //Player 2 input and switch statements
-        System.out.println("Player 2, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 44, and bottom right = 44.");
+        System.out.println("Player 2, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 42, and bottom right = 44.");
         int input2 = scan1.nextInt();
         System.out.println();
-
 
         switch(input2){ //this workish, overrides and prints 2 seperate game boards 
             case 00: gameBoard[0][0] = 'O'; //top left
@@ -318,7 +288,6 @@ static void Board(){
                 System.out.println();
         }
         System.out.println();
-
         break;
 
             case 44: gameBoard[4][4] = 'O'; //bottom right
@@ -329,7 +298,6 @@ static void Board(){
                 System.out.println();
         }
         System.out.println();
-
         break;
     }
 
@@ -340,7 +308,7 @@ static void Board(){
                     System.out.println("Congrats player 2, you have won!");
                     System.out.println("Good try player 1!");
                     break; 
-                }       //TEST THIS AND SET UP THE REST OF THE WAYS TO WIN
+                }      
             }
             }
         if (gameBoard[2][0] == 'O'){ //this is winning middle row across
@@ -406,12 +374,12 @@ static void Board(){
                 }
             }
             }
-
-        //set up both across
-            
-    counter++;
-    }
+            counter++;
+        }
+    
+    
 }
+
 
 
     //MAYBE MAKE A WHILE LOOP FOR taking turns? and we can set the condition until someone wins or loses or ties
@@ -442,10 +410,5 @@ static void Board(){
 
 public static void main(String[] args){
 Board();
-
-
-int newarr[][] = {{1,2,3}, {4,5,6}};
-
-System.out.print(newarr[0][1]); //prints 2
 }
 }
