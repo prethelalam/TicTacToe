@@ -23,10 +23,8 @@ static void Board(){
             System.out.println();
         }
         System.out.println();
-    
-    int counter = 0;
 
-    for (int i = 0; counter <= 3.5; i++){ // i feel like i have to change the condition for the for loop. 3 is not enough but 4 is too much??
+    for (int i = 1; i <= 5; i++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
         //Player 1 input and switch statements
         System.out.println("Player 1, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 42, and bottom right = 44");
 
@@ -200,10 +198,6 @@ static void Board(){
                 }
             }
             }
-    
-        
-
-        //set up tying
 
     //Player 2 input and switch statements
         System.out.println("Player 2, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 42, and bottom right = 44.");
@@ -375,11 +369,9 @@ static void Board(){
                 }
             }
             }
-            counter++;
         }
         System.out.println("You have tied");
             //maybe create rows and columns variable and set indexes equal too it, then use the row to have it tie
-    
 }
 
 
