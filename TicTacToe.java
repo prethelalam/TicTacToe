@@ -24,7 +24,7 @@ static void Board(){
         }
         System.out.println();
 
-    for (int i = 1; i <= 5; i++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
+    for (int i = 0; i < 4; i++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
         //Player 1 input and switch statements
         System.out.println("Player 1, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 42, and bottom right = 44");
 
@@ -34,7 +34,7 @@ static void Board(){
 
         switch (input){ //need to have this put x or o depending on if player 1 or 2 selects this spot
             case 00: gameBoard[0][0] = 'X'; //top left
-                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
+                for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row. this is an enhanced loop
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
                 }
@@ -126,6 +126,8 @@ static void Board(){
     }
         //set up conditions to win, lose, and tie. maybe also create and infinite loop(while loop) to play the game again once it ends
         //X winning: 
+        boolean tie = false;
+
         if (gameBoard[0][0] == 'X'){ //this is winning top row across
             if (gameBoard[0][2] == 'X'){
                 if (gameBoard[0][4] == 'X'){
@@ -135,6 +137,11 @@ static void Board(){
                 }
             }
             }
+
+        else {
+            System.out.println("You have tieddddd");
+        }
+
         if (gameBoard[2][0] == 'X'){ //this is winning middle row across
             if (gameBoard[2][2] == 'X'){
                 if (gameBoard[2][4] == 'X'){
@@ -144,6 +151,9 @@ static void Board(){
                 }
             }
             }
+            else {
+            System.out.println("You have tieddddd");
+        }
         if (gameBoard[4][0] == 'X'){ //this is winning bottom row across
             if (gameBoard[4][2] == 'X'){
                 if (gameBoard[4][4] == 'X'){
