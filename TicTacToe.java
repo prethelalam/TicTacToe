@@ -24,24 +24,33 @@ static void Board(){
         }
         System.out.println();
 
-    for (int i = 0; i < 4; i++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
+    for (int i = 0; i < 5; i++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
         //Player 1 input and switch statements
         System.out.println("Player 1, where would you like your X to be placed (1-9):");
 
         Scanner scan1 = new Scanner(System.in);
-        int input = scan1.nextInt();
+        int Player1Input = scan1.nextInt();
         System.out.println();
+        
 
-        switch (input){ //need to have this put x or o depending on if player 1 or 2 selects this spot
-            case 1: gameBoard[0][0] = 'X'; //top left
+        switch (Player1Input){ //need to have this put x or o depending on if player 1 or 2 selects this spot
+            case 1: 
+            //EDIT THIS, this WORKs
+            if (gameBoard[0][0] != 'X'){
+                if (gameBoard[0][0] != 'O'){
+                gameBoard[0][0] = 'X'; //top left
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row. this is an enhanced loop
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
                 }
                 System.out.println();
-                
         }
         System.out.println();
+    }
+    }
+    else {
+        System.out.println("try agoooin");
+    }
         break;
 
             case 2: gameBoard[0][2] = 'X'; //top middle
@@ -124,8 +133,7 @@ static void Board(){
         System.out.println();
         break;
     }
-        //set up conditions to win, lose, and tie. maybe also create and infinite loop(while loop) to play the game again once it ends
-        //X winning: 
+        //X winning:
 
         if (gameBoard[0][0] == 'X'){ //this is winning top row across
             if (gameBoard[0][2] == 'X'){
@@ -199,15 +207,21 @@ static void Board(){
                 }
             }
             }
+        
 
 
     //Player 2 input and switch statements
-        System.out.println("Player 2, where would you like your X to be placed: top left = 00, top middle = 02, top right = 04, middle left = 20, middle middle = 22, middle right 24, bottom left = 40, bottom middle = 42, and bottom right = 44.");
-        int input2 = scan1.nextInt();
+        System.out.println("Player 2, where would you like your X to be placed (1-9):");
+        int Player2Input = scan1.nextInt();
         System.out.println();
+        
 
-        switch(input2){ //this workish, overrides and prints 2 seperate game boards 
-            case 1: gameBoard[0][0] = 'O'; //top left
+        switch(Player2Input){ 
+            case 1: 
+            //EDIT THIS, DOESNT WORK
+            if (gameBoard[0][0] != 'O'){
+                if (gameBoard[0][0] != 'X'){
+            gameBoard[0][0] = 'O'; //top left
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
@@ -215,6 +229,11 @@ static void Board(){
                 System.out.println();
         }
         System.out.println();
+    }
+}
+    else {
+        System.out.println("try again");
+    }
         break;
 
             case 2: gameBoard[0][2] = 'O'; //top middle
@@ -299,6 +318,7 @@ static void Board(){
     }
 
     //O winning: set it up the same as X winning
+
         if (gameBoard[0][0] == 'O'){ //this is winning top row across
             if (gameBoard[0][2] == 'O'){
                 if (gameBoard[0][4] == 'O'){
@@ -371,37 +391,15 @@ static void Board(){
                 }
             }
             }
-        }
+    }
         System.out.println("You have tied");
             //maybe create rows and columns variable and set indexes equal too it, then use the row to have it tie
 }
 
 
-
-    //MAYBE MAKE A WHILE LOOP FOR taking turns? and we can set the condition until someone wins or loses or ties
-
-//1. figure out where each index is, and be able to assign an X or O to that index in the gameboard array
-//2. print that X or O to in the gameboard array
-//3. Set up invalid games, such as O and X can't both win
-//4. need to set up options for winning, losing, and tying
-//5. create a interface for it (GUI)
-
-//steps for gameboard:
-/* 1. player 1 does a move
-    2. gameboard reflects said move
-    3. updated gameboard is shown to player 2
-    4. player to selects a move
-    5. updated gameboard is shown to player 1
-    6. repeat
-    */
-
-//Questions:
-        /*
-        - how to use a switch with a 2d array  
-        - how to know where an index is in a 2d array 
-        - how to update a 2d array with new elements, hard code? literally manually do it your self (lots of hard coding tho)… check it out anyways 
-	    - while loop with a counter till it reaches 9 or someone wins */
-
+//1. make misinputs
+//2. make a tying option
+//3. create a interface for it (GUI)
 
 
 public static void main(String[] args){
