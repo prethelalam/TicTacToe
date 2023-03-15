@@ -27,9 +27,23 @@ static void Board(){
 
 
         // maybe do if lines 20 - 21 have a letter, then you have to choose another space.. go witht his idea for now
-        
+
+    
+
     for (int i = 0; i <= 4; i++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
         //Player 1 input and switch statements
+        for (int row = 0; row < 3; row = row + 1)  //adjust this
+        {
+            for (int column = 0; column < 3; column = column + 1) 
+            {
+                if (gameBoard [row] [column] == 'X' && gameBoard [row] [column] == 'O') 
+                {
+                    System.out.println ("It is a tie. Cats game!") ;
+                    
+                }
+            }  
+        }
+
         System.out.println("Player 1, where would you like your X to be placed (1-9):");
 
         Scanner scan1 = new Scanner(System.in);
