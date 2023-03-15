@@ -24,7 +24,11 @@ static void Board(){
         }
         System.out.println();
 
-    for (int i = 0; i < 4; i++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
+
+
+        // maybe do if lines 20 - 21 have a letter, then you have to choose another space.. go witht his idea for now
+        
+    for (int i = 0; i <= 4; i++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
         //Player 1 input and switch statements
         System.out.println("Player 1, where would you like your X to be placed (1-9):");
 
@@ -50,12 +54,7 @@ static void Board(){
     //     System.out.println("try agoooin");
     // }
         break;
-        if (gameBoard[0][0] != 'X'){
-                System.out.println("this spot is taken");
-            }
-                else if (gameBoard[0][0] != 'O'){
-                    System.out.println("this spot is taken");
-                }
+        
                 
 
 // trying out something else for tying
@@ -78,7 +77,8 @@ static void Board(){
     // break;
         
 
-            case 2: gameBoard[0][2] = 'X'; //top middle
+            case 2: 
+            gameBoard[0][2] = 'X'; //top middle
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
@@ -88,7 +88,8 @@ static void Board(){
         System.out.println();
         break;
 
-            case 3: gameBoard[0][4] = 'X'; //top right
+            case 3: 
+            gameBoard[0][4] = 'X'; //top right
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
@@ -98,7 +99,8 @@ static void Board(){
         System.out.println();
         break;
 
-            case 4: gameBoard[2][0] = 'X'; //middle left
+            case 4: 
+            gameBoard[2][0] = 'X'; //middle left
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
@@ -108,7 +110,8 @@ static void Board(){
         System.out.println();
         break;
 
-            case 5: gameBoard[2][2] = 'X'; //middle middle
+            case 5: 
+            gameBoard[2][2] = 'X'; //middle middle
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
@@ -118,7 +121,8 @@ static void Board(){
         System.out.println();
         break;
 
-            case 6: gameBoard[2][4] = 'X'; //middle right
+            case 6: 
+            gameBoard[2][4] = 'X'; //middle right
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
@@ -128,7 +132,8 @@ static void Board(){
         System.out.println();
         break;
 
-            case 7: gameBoard[4][0] = 'X'; //bottom left
+            case 7: 
+            gameBoard[4][0] = 'X'; //bottom left
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
@@ -138,7 +143,8 @@ static void Board(){
         System.out.println();
         break;
 
-            case 8: gameBoard[4][2] = 'X'; //bottom middle
+            case 8: 
+            gameBoard[4][2] = 'X'; //bottom middle
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
@@ -148,7 +154,8 @@ static void Board(){
         System.out.println();
         break;
 
-            case 9: gameBoard[4][4] = 'X'; //bottom right
+            case 9: 
+            gameBoard[4][4] = 'X'; //bottom right
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                 for (char c: row){ //this loops each character in the current row
                 System.out.print(c);
@@ -159,6 +166,7 @@ static void Board(){
         break;
     }
 
+    
     
         //X winning:
 
@@ -246,8 +254,7 @@ static void Board(){
         switch(Player2Input){ 
             case 1: 
             //EDIT THIS, DOESNT WORK
-            if (gameBoard[0][0] != 'O'){
-                if (gameBoard[0][0] != 'X'){
+            
                     gameBoard[0][0] = 'O'; //top left
                     for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
                     for (char c: row){ //this loops each character in the current row
@@ -256,11 +263,8 @@ static void Board(){
                     System.out.println();
         }
         System.out.println();
-    }
-}
-    else {
-        System.out.println("try agaaaaain");
-    }
+    
+
         break;
 
             case 2: gameBoard[0][2] = 'O'; //top middle
@@ -419,8 +423,7 @@ static void Board(){
             }
             }
     }
-        System.out.println("You have tied");
-            //maybe create rows and columns variable and set indexes equal too it, then use the row to have it tie
+
 }
 
 
@@ -428,8 +431,12 @@ static void Board(){
 //2. make a tying option
 //3. create a interface for it (GUI)
 
+//- okay i think you might have to break the program up into different methods. 
+
 
 public static void main(String[] args){
 Board();
+
+
 }
 }
