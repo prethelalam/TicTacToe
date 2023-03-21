@@ -30,7 +30,7 @@ static void Board(){
 
     
 
-    for (int i = 0; i <= 4; i++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
+    for (int i = 0; i <= 3; i++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
         //Player 1 input and switch statements
         for (int row = 0; row < 3; row = row + 1)  //adjust this
         {
