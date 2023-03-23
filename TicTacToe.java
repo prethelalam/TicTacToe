@@ -30,19 +30,10 @@ static void Board(){
 
     
 
-    for (int i = 0; i <= 3; i++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
+    //for (int counter = 0; counter < 8; counter++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
         //Player 1 input and switch statements
-        for (int row = 0; row < 3; row = row + 1)  //adjust this
-        {
-            for (int column = 0; column < 3; column = column + 1) 
-            {
-                if (gameBoard [row] [column] == 'X' && gameBoard [row] [column] == 'O') 
-                {
-                    System.out.println ("It is a tie. Cats game!") ;
-                    
-                }
-            }  
-        }
+        int counter = 0;
+        do{
 
         System.out.println("Player 1, where would you like your X to be placed (1-9):");
 
@@ -52,9 +43,7 @@ static void Board(){
         
         switch (Player1Input){ //need to have this put x or o depending on if player 1 or 2 selects this spot
             case 1: 
-            //EDIT THIS, this WORKs
-            
-                    gameBoard[0][0] = 'X'; //top left
+                gameBoard[0][0] = 'X'; //top left
                     for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row. this is an enhanced loop
                     for (char c: row){ //this loops each character in the current row
                     System.out.print(c);
@@ -62,35 +51,8 @@ static void Board(){
                     System.out.println();
         }
         System.out.println();
-
-        
-    // else {
-    //     System.out.println("try agoooin");
-    // }
         break;
         
-                
-
-// trying out something else for tying
-    //     if (gameBoard[0][0] = 'X'){
-    //         System.out.println("Try again matey");
-    //     }
-    //     else if (gameBoard[0][0] = 'O'){
-    //         System.out.println("try again matrey pt 2.");
-    //     }
-    //     else{
-    //         gameBoard[0][0] = 'X'; //top left
-    //                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row. this is an enhanced loop
-    //                 for (char c: row){ //this loops each character in the current row
-    //                 System.out.print(c);
-    //                 }
-    //                 System.out.println();
-    //     }
-    //     System.out.println();
-    // }
-    // break;
-        
-
             case 2: 
             gameBoard[0][2] = 'X'; //top middle
                 for (char [] row: gameBoard){ //so here we are pulling an element from the gameboard and storing each one in row. this for loop is set up to create each row
@@ -436,8 +398,11 @@ static void Board(){
                 }
             }
             }
-    }
-
+    
+            counter++;
+            
+} while (counter < 5);
+System.out.println("Its a tie, try again next time");
 }
 
 
