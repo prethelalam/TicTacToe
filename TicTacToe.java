@@ -24,7 +24,7 @@ static void Board(){
         }
         System.out.println();
 
-
+    }
 
         // maybe do if lines 20 - 21 have a letter, then you have to choose another space.. go witht his idea for now
 
@@ -32,14 +32,17 @@ static void Board(){
 
     //for (int counter = 0; counter < 8; counter++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
         //Player 1 input and switch statements
-        int counter = 0;
-        do{
+
+public class Player1Thread extends Thread{
+
+        public void run(char[][] gameBoard){
 
         System.out.println("Player 1, where would you like your X to be placed (1-9):");
 
         Scanner scan1 = new Scanner(System.in);
         int Player1Input = scan1.nextInt();
         System.out.println();
+
         
         switch (Player1Input){ //need to have this put x or o depending on if player 1 or 2 selects this spot
             case 1: 
@@ -140,90 +143,21 @@ static void Board(){
         }
         System.out.println();
         break;
+    
+
+    
+    
+
+
+        }
     }
+}
+        public class Player2Thread extends Thread{
 
-    
-    
-        //X winning:
-
-        if (gameBoard[0][0] == 'X'){ //this is winning top row across
-            if (gameBoard[0][2] == 'X'){
-                if (gameBoard[0][4] == 'X'){
-                    System.out.println("Congrats player 1, you have won!");
-                    System.out.println("Good try player 2!");
-                    break; 
-                }
-            }
-            }
-        if (gameBoard[2][0] == 'X'){ //this is winning middle row across
-            if (gameBoard[2][2] == 'X'){
-                if (gameBoard[2][4] == 'X'){
-                    System.out.println("Congrats player 1, you have won!");
-                    System.out.println("Good try player 2!");
-                    break; 
-                }
-            }
-            }
-        if (gameBoard[4][0] == 'X'){ //this is winning bottom row across
-            if (gameBoard[4][2] == 'X'){
-                if (gameBoard[4][4] == 'X'){
-                    System.out.println("Congrats player 1, you have won!");
-                    System.out.println("Good try player 2!");
-                    break; 
-                }
-            }
-            }
-        if (gameBoard[0][0] == 'X'){ //this is winning top column down
-            if (gameBoard[2][0] == 'X'){
-                if (gameBoard[4][0] == 'X'){
-                    System.out.println("Congrats player 1, you have won!");
-                    System.out.println("Good try player 2!");
-                    break; 
-                }
-            }
-            }
-        if (gameBoard[0][2] == 'X'){ //this is winning middle column down
-            if (gameBoard[2][2] == 'X'){
-                if (gameBoard[4][2] == 'X'){
-                    System.out.println("Congrats player 1, you have won!");
-                    System.out.println("Good try player 2!");
-                    break; 
-                }
-            }
-            }
-        if (gameBoard[0][4] == 'X'){ //this is winning bottom column down
-            if (gameBoard[2][4] == 'X'){
-                if (gameBoard[4][4] == 'X'){
-                    System.out.println("Congrats player 1, you have won!");
-                    System.out.println("Good try player 2!");
-                    break; 
-                }
-            }
-            }
-        if (gameBoard[0][0] == 'X'){ //diagnoal starting from top left to bottom right
-            if (gameBoard[2][2] == 'X'){
-                if (gameBoard[4][4] == 'X'){
-                    System.out.println("Congrats player 1, you have won!");
-                    System.out.println("Good try player 2!");
-                    break; 
-                }
-            }
-            }
-        if (gameBoard[0][4] == 'X'){ //diagnoal starting from top right to bottom left
-            if (gameBoard[2][2] == 'X'){
-                if (gameBoard[4][0] == 'X'){
-                    System.out.println("Congrats player 1, you have won!");
-                    System.out.println("Good try player 2!");
-                    break; 
-                }
-            }
-            }
-        
-
-
-    //Player 2 input and switch statements
+        public void run(char [][] gameBoard){
         System.out.println("Player 2, where would you like your X to be placed (1-9):");
-        int Player2Input = scan1.nextInt();
+        Scanner scan2 = new Scanner(System.in);
+        int Player2Input = scan2.nextInt();
         System.out.println();
         
 
@@ -322,8 +256,89 @@ static void Board(){
         }
         System.out.println();
         break;
-    }
+    
 
+    
+        }
+    }
+    
+} 
+
+public static void XWinning(char[][] gameBoard){
+
+        if (gameBoard[0][0] == 'X'){ //this is winning top row across
+            if (gameBoard[0][2] == 'X'){
+                if (gameBoard[0][4] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+                    
+                }
+            }
+            }
+        if (gameBoard[2][0] == 'X'){ //this is winning middle row across
+            if (gameBoard[2][2] == 'X'){
+                if (gameBoard[2][4] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+                }
+            }
+            }
+        if (gameBoard[4][0] == 'X'){ //this is winning bottom row across
+            if (gameBoard[4][2] == 'X'){
+                if (gameBoard[4][4] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+                }
+            }
+            }
+        if (gameBoard[0][0] == 'X'){ //this is winning top column down
+            if (gameBoard[2][0] == 'X'){
+                if (gameBoard[4][0] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+
+                }
+            }
+            }
+        if (gameBoard[0][2] == 'X'){ //this is winning middle column down
+            if (gameBoard[2][2] == 'X'){
+                if (gameBoard[4][2] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+
+                }
+            }
+            }
+        if (gameBoard[0][4] == 'X'){ //this is winning bottom column down
+            if (gameBoard[2][4] == 'X'){
+                if (gameBoard[4][4] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+
+                }
+            }
+            }
+        if (gameBoard[0][0] == 'X'){ //diagnoal starting from top left to bottom right
+            if (gameBoard[2][2] == 'X'){
+                if (gameBoard[4][4] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+
+                }
+            }
+            }
+        if (gameBoard[0][4] == 'X'){ //diagnoal starting from top right to bottom left
+            if (gameBoard[2][2] == 'X'){
+                if (gameBoard[4][0] == 'X'){
+                    System.out.println("Congrats player 1, you have won!");
+                    System.out.println("Good try player 2!");
+
+                }
+            }
+            }
+}
+        
+public static void OWinning(char[][] gameBoard){
     //O winning: set it up the same as X winning
 
         if (gameBoard[0][0] == 'O'){ //this is winning top row across
@@ -331,7 +346,7 @@ static void Board(){
                 if (gameBoard[0][4] == 'O'){
                     System.out.println("Congrats player 2, you have won!");
                     System.out.println("Good try player 1!");
-                    break; 
+
                 }      
             }
             }
@@ -340,7 +355,7 @@ static void Board(){
                 if (gameBoard[2][4] == 'O'){
                     System.out.println("Congrats player 2, you have won!");
                     System.out.println("Good try player 1!");
-                    break; 
+
                 }
             }
             }
@@ -349,7 +364,7 @@ static void Board(){
                 if (gameBoard[4][4] == 'O'){
                     System.out.println("Congrats player 2, you have won!");
                     System.out.println("Good try player 1!");
-                    break; 
+
                 }
             }
             }
@@ -358,7 +373,7 @@ static void Board(){
                 if (gameBoard[4][0] == 'O'){
                     System.out.println("Congrats player 2, you have won!");
                     System.out.println("Good try player 1!");
-                    break; 
+
                 }
             }
             }
@@ -367,7 +382,7 @@ static void Board(){
                 if (gameBoard[4][2] == 'O'){
                     System.out.println("Congrats player 1, you have won!");
                     System.out.println("Good try player 2!");
-                    break; 
+
                 }
             }
             }
@@ -376,7 +391,7 @@ static void Board(){
                 if (gameBoard[4][4] == 'O'){
                     System.out.println("Congrats player 2, you have won!");
                     System.out.println("Good try player 1!");
-                    break; 
+
                 }
             }
             }
@@ -385,7 +400,7 @@ static void Board(){
                 if (gameBoard[4][4] == 'O'){
                     System.out.println("Congrats player 2, you have won!");
                     System.out.println("Good try player 1!");
-                    break; 
+
                 }
             }
             }
@@ -394,16 +409,12 @@ static void Board(){
                 if (gameBoard[4][0] == 'O'){
                     System.out.println("Congrats player 2, you have won!");
                     System.out.println("Good try player 1!");
-                    break; 
+
                 }
             }
             }
-    
-            counter++;
-            
-} while (counter < 5);
-System.out.println("Its a tie, try again next time");
 }
+
 
 
 //1. make misinputs
@@ -414,8 +425,14 @@ System.out.println("Its a tie, try again next time");
 
 
 public static void main(String[] args){
+
 Board();
-
+XWinning(Class<gameBoard[][]>); //not working properly
+OWinning(Class<gameBoard[][]>); //not working properly
+System.out.println("Its a tie, try again next time");
 
 }
 }
+
+//1. figure out what is going wrong with passing through the array in main
+//2. see if you can use thread to have 2 for loop run at the same time
