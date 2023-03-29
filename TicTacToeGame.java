@@ -247,6 +247,7 @@ static void Board(){
     if (i == 4){
         break;
     }
+    
     //Player 2 input and switch statements
     
         System.out.println("Player 2, where would you like your X to be placed (1-9):");
@@ -432,11 +433,8 @@ static void Board(){
 
 
 
-//1. make misinputs
-//2. make a tying option
-//3. create a interface for it (GUI)
 
-//- okay i think you might have to break the program up into different methods. 
+//create a interface for it (GUI)
 
 
 public static void main(String[] args){
