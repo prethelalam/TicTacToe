@@ -425,12 +425,8 @@ public class TicTacToeGUI {
         }
     }
 
-
-
-
-
-//1. make misinputs
-//2. create a interface for it (GUI)
+    
+//create a interface for it (GUI)
 
 
     public static void main(String[] args){
