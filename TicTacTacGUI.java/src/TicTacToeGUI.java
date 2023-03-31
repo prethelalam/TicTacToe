@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
+import javax.seing.JPanel;
+import javax.swing.JFrame;
 
 public class TicTacToeGUI {
     static void Board(){
