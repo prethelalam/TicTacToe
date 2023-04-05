@@ -23,8 +23,14 @@ public class XOButton extends JButton implements ActionListener{ //we just need 
         value%= 3; //this is saying if it is more than or equal to 3 then it will go to zero?
         switch(value){
             case 0:
+                setIcon(null);
+                break;
             case 1:
+                setIcon(X);
+                break;
             case 2:
+                setIcon(O);
+                break;
         }
     }
 }
