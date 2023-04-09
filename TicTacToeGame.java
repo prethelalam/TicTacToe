@@ -20,7 +20,8 @@ public class TicTacToeGame {
         }
         System.out.println();
 
-        for (int i = 0; i <= 4; i++){ // i feel like I have to change the condition for the for loop. 3 is not enough but 4 is too much??
+        for (int i = 0; i <= 4; i++){ 
+            
             //Player 1 input and switch statements
             System.out.println("Player 1, where would you like your X to be placed (1-9):");
 
