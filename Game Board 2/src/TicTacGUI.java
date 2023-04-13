@@ -26,14 +26,31 @@ public class TicTacGUI extends JFrame {
         setVisible(true); //this will allow the user to see the GUI
         currentPlayer = "x";
         board = new JButton[3][3];
-        hasWinner = false; //so the game just started and there is not any winner
+        hasWinner = false; //so the game just started and there is not any winner yet
+        initializeBoard();
+        initializeMenuBar();
+
 
     }
     private void initializeMenuBar(){} //this will obviously initialize the menu bar
     private void resetBoard(){}//this will reset the board when the user clicks new game
     private void initializeBoard(){}
     private void togglePlayer(){} //this is our change move method
-    private void hasWinner(){} //this is going to check to see if there is a winner
+    private void hasWinner(){ //this is going to check to see if there is a winner
+        //this will get the board (its a type jbutton, jbutton has a method called getText, which we will compare to see if it is equal to the current player.
+        if (board[0][0].getText().equals(currentPlayer) && board[1][0].getText().equals(currentPlayer) && board[2][0].getText().equals(currentPlayer)) {
+            JOptionPane.showMessageDialog(null, "Player " + currentPlayer + " has won") //winning left column down
+            hasWinner = true;
+        }
+        else if (board[0][1].getText().equals(currentPlayer) && board[1][1].getText().equals(currentPlayer) && board[2][1].getText().equals(currentPlayer)) {
+            JOptionPane.showMessageDialog(null, "Player " + currentPlayer + " has won") //winning left column down
+            hasWinner = true;
+        }
+        else if (board[0][2].getText().equals(currentPlayer) && board[1][2].getText().equals(currentPlayer) && board[2][2].gettext().equals(currentPlayer)) {
+            JOptionPane.showMessageDialog(null, "Player " + currentPlayer + " has won") //winning left column down
+            hasWinner = true;
+        }
+
+
     }
-
-
+}
