@@ -211,7 +211,7 @@ public class TicTacToeGame {
             }
 
             //Player 2 input and switch statements
-            System.out.println("Player 2, where would you like your X to be placed (1-9):");
+            System.out.println("Player 2, where would you like your O to be placed (1-9):");
             int Player2Input = scan1.nextInt();
             System.out.println();
 
