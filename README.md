@@ -11,6 +11,7 @@ I ran into many problems while creating the logic section of my tic tac toe game
 
 
 ## Problems I ran into (for GUI):
-
+I ran into many problems while creating the GUI for my game. My initial problem was that I did not know swing so I had to watch a video that taught me how to use swing. I learned about how to use a panel container, JFrames, JButtons, action listeners and more. Moreover, I learned how to use many other swing properties in order to create the GUI.
 
 ## Conclusion:
+I realized that I need to spend more time learning how to use swing in order to create GUI's in the future. My takeaway is to watch a youtube tutorial that breaks down how to use swing and then I will implement what I learn in my next prograaming project. I believe this is a great step to diversify my knowledge in not only Java but also programming. 
