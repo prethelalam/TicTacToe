@@ -19,9 +19,9 @@ public class TicTacToe {
     private JFrame frame;
     private JTextField xCount;
     private JTextField oCount;
-    private int xCount1=0;
+    private int xCount1=0; //so the game plan is when the user presses a button then we need to gameboard to reflect their move, which is why we create this variable and the ones below
     private int oCount1=0;
-    private String startGame = "X";
+    private String startGame = "X"; //created this to make the first user to be X. so the game will start with the first user being X
     private int b1 = 10;
     private int b2 = 10;
     private int b3 = 10;
@@ -142,7 +142,7 @@ public class TicTacToe {
         }
     }
 
-    private void choosePlayer(){
+    private void choosePlayer(){ //we set this method to ensure that the first user that goes is X. This also allows the X to also not always be player 1 but for it to alternate each game with player 2 on who is going first
         if(startGame.equalsIgnoreCase("X"))
         {
             startGame="O";
@@ -156,42 +156,42 @@ public class TicTacToe {
      * Initialize the contents of the frame.
      */
     private void initialize() {
-        frame = new JFrame();
+        frame = new JFrame(); //created a JFrame and made a border layout
         frame.setBounds(100, 100, 450, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setLayout(new BorderLayout(0, 0));
+        frame.getContentPane().setLayout(new BorderLayout(0, 0)); //this is the Content Pane or the initial pane that was set
 
-        JPanel panel = new JPanel();
+        JPanel panel = new JPanel(); //Created a JPanel
         panel.setBorder(new LineBorder(new Color(0, 0, 0), 0));
-        frame.getContentPane().add(panel, BorderLayout.CENTER);
-        panel.setLayout(new GridLayout(3, 5, 2, 2));
+        frame.getContentPane().add(panel, BorderLayout.CENTER); //here we are adding the frame to the content pane and we made the panel in the center
+        panel.setLayout(new GridLayout(3, 5, 2, 2)); //here we created a grid layout for the gameboard
 
-        JPanel panel_1 = new JPanel();
+        JPanel panel_1 = new JPanel(); //in order to have a button, we had to create a panel to put the button in
         panel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel.add(panel_1);
         panel_1.setLayout(new BorderLayout(0, 0));
 
-        JButton btn1 = new JButton("");
+        JButton btn1 = new JButton(""); //this button is in the first panel
         btn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                btn1.setText(startGame);
+                btn1.setText(startGame); //here is the panel is clicked then the first player will be X and an X will appear
                 if (startGame.equalsIgnoreCase("X")){
-                    btn1.setForeground(Color.RED);
+                    btn1.setForeground(Color.RED); //here we made the color red for the button
                     b1 = 1;
                     i++;
                 }
                 else {
-                    btn1.setForeground(Color.blue);
+                    btn1.setForeground(Color.blue); //here we are assinging player 2 (O) to be blue
                     b1 = 0;
                     i++;
                 }
-                choosePlayer();
+                choosePlayer(); //this is important because we need this because this will select if we need to set text O or X.
                 winningGame();
             }
         });
-        btn1.setFont(new Font("Lucida Grande", Font.BOLD, 40));
-        panel_1.add(btn1, BorderLayout.CENTER);
+        btn1.setFont(new Font("Lucida Grande", Font.BOLD, 40)); //here we are jsut adding a font to the text
+        panel_1.add(btn1, BorderLayout.CENTER); //here we are adding the button to the panel and setting the layout 
 
         JPanel panel_2 = new JPanel();
         panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -457,15 +457,15 @@ public class TicTacToe {
         btn9.setFont(new Font("Lucida Grande", Font.BOLD, 40));
         panel_13.add(btn9, BorderLayout.CENTER);
 
-        JPanel panel_14 = new JPanel();
+        JPanel panel_14 = new JPanel(); //this panel holds the reset button
         panel_14.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel.add(panel_14);
         panel_14.setLayout(new BorderLayout(0, 0));
 
         JButton btnReset = new JButton("RESET");
-        btnReset.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                btn1.setText(null);
+        btnReset.addActionListener(new ActionListener() { //so here we are making the reset button do something. you have to take the naem of the button and add an actionlistener so that the button know to do something once clicked, think of this as a notification.
+            public void actionPerformed(ActionEvent e) { //next we set up a actionPerformed and actionEvent. once the system gets notified that a button is clicked then this allow the program to run what you set up/programmed in said button
+                btn1.setText(null); //this will make each button in the gameboard blank, which is why we set the text to null
                 btn2.setText(null);
                 btn3.setText(null);
                 btn4.setText(null);
