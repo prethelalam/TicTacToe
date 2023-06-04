@@ -22,7 +22,7 @@ public class TicTacToe {
     private int xCount1=0; //so the game plan is when the user presses a button then we need to gameboard to reflect their move, which is why we create this variable and the ones below
     private int oCount1=0;
     private String startGame = "X"; //created this to make the first user to be X. so the game will start with the first user being X
-    private int b1 = 10;
+    private int b1 = 10; //we have to declare these variables below, we have to assign a value greater than 9
     private int b2 = 10;
     private int b3 = 10;
     private int b4 = 10;
@@ -56,7 +56,7 @@ public class TicTacToe {
         initialize();
     }
 
-    private void winningGame(){
+    private void winningGame(){ //here we set up all of the possible winning options for X
         //for player x to win
         if (b1 == 1 && b2 == 1 && b3 == 1){
             JOptionPane.showMessageDialog(frame, "Player X Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
@@ -178,17 +178,17 @@ public class TicTacToe {
                 btn1.setText(startGame); //here is the panel is clicked then the first player will be X and an X will appear
                 if (startGame.equalsIgnoreCase("X")){
                     btn1.setForeground(Color.RED); //here we made the color red for the button
-                    b1 = 1;
+                    b1 = 1; //we do this so it is easier to set up the winning options. so if button 1 is clicked, that is X and it basically holds a 1
                     i++;
                 }
                 else {
                     btn1.setForeground(Color.blue); //here we are assinging player 2 (O) to be blue
-                    b1 = 0;
+                    b1 = 0; //the same logic is followed for the O winning options. But this time, O holds a 0
                     i++;
                 }
-                choosePlayer(); //this is important because we need this because this will select if we need to set text O or X.
-                winningGame();
-            }
+                choosePlayer(); //this is important because we need this because this will select if we need to set text O or X. so everytime a user presses a button we call this function to see which image (X or O) will be placed
+                winningGame(); //we call this function to see is anyone wins after placing a move
+            } //the logic for this button is the same logic used for the rest of the buttons
         });
         btn1.setFont(new Font("Lucida Grande", Font.BOLD, 40)); //here we are jsut adding a font to the text
         panel_1.add(btn1, BorderLayout.CENTER); //here we are adding the button to the panel and setting the layout 
@@ -491,5 +491,4 @@ public class TicTacToe {
         panel_14.add(btnReset, BorderLayout.CENTER);
     }
 }
-
-//will add notes later and go through the logic behind whose player 1
+//stopped at 25:48
