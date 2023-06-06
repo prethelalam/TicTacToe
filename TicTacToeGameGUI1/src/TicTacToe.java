@@ -22,7 +22,7 @@ public class TicTacToe {
     private int xCount1=0; //so the game plan is when the user presses a button then we need to gameboard to reflect their move, which is why we create this variable and the ones below
     private int oCount1=0;
     private String startGame = "X"; //created this to make the first user to be X. so the game will start with the first user being X
-    private int b1 = 10; //we have to declare these variables below, we have to assign a value greater than 9
+    private int b1 = 10; //I have to declare these variables below, I have to assign a value greater than 9
     private int b2 = 10;
     private int b3 = 10;
     private int b4 = 10;
@@ -31,7 +31,7 @@ public class TicTacToe {
     private int b7 = 10;
     private int b8 = 10;
     private int b9 = 10;
-    private int i = 0;
+    private int i = 0; //we need this because after a user places an X or O, we have to increment it by 1
 
     /**
      * Launch the application.
@@ -58,84 +58,88 @@ public class TicTacToe {
 
     private void winningGame(){ //here we set up all of the possible winning options for X
         //for player x to win
-        if (b1 == 1 && b2 == 1 && b3 == 1){
+
+        //this is winning top row horizonal
+        if (b1 == 1 && b2 == 1 && b3 == 1){ //the logic is, when the all of these buttons are assigned X then X wins. the same logic is applied to all of the winning options and other buttons
+            JOptionPane.showMessageDialog(frame, "Player X Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE); //when someone wins you have to notify the user, so we have to have JOPtionPane show a message. the first argument is the fram, the 2nd argument is the text, and 3rd argument is the title of the game. we need one more argument that we need to pass. so we do joptionpane.informationmessage.
+            xCount1++; //we add this because when someone wins we need to add 1 increment to their score
+            xCount.setText(String.valueOf(xCount1)); //this will display the xCount (number of wins) and update it in the scoreboard
+        } //the same logic used for this if statement applies to the rest of the winning options for X and O
+        else if (b4 == 1 && b5 == 1 && b6 == 1){ //this is winning middle row horizonal
             JOptionPane.showMessageDialog(frame, "Player X Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             xCount1++;
             xCount.setText(String.valueOf(xCount1));
         }
-        else if (b4 == 1 && b5 == 1 && b6 == 1){
+        else if (b7 == 1 && b8 == 1 && b9 == 1){ //this is winning bottom row horizonal
             JOptionPane.showMessageDialog(frame, "Player X Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             xCount1++;
             xCount.setText(String.valueOf(xCount1));
         }
-        else if (b7 == 1 && b8 == 1 && b9 == 1){
+        else if (b1 == 1 && b4 == 1 && b7 == 1){ //this is winning left column down
             JOptionPane.showMessageDialog(frame, "Player X Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             xCount1++;
             xCount.setText(String.valueOf(xCount1));
         }
-        else if (b1 == 1 && b4 == 1 && b7 == 1){
+        else if (b2 == 1 && b5 == 1 && b8 == 1){ //this is winning middle column down
             JOptionPane.showMessageDialog(frame, "Player X Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             xCount1++;
             xCount.setText(String.valueOf(xCount1));
         }
-        else if (b2 == 1 && b5 == 1 && b8 == 1){
+        else if (b3 == 1 && b6 == 1 && b9 == 1){ //this is winning right column down
             JOptionPane.showMessageDialog(frame, "Player X Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             xCount1++;
             xCount.setText(String.valueOf(xCount1));
         }
-        else if (b3 == 1 && b6 == 1 && b9 == 1){
+        else if (b1 == 1 && b5 == 1 && b9 == 1){ //this is winning left to right diagonal
             JOptionPane.showMessageDialog(frame, "Player X Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             xCount1++;
             xCount.setText(String.valueOf(xCount1));
         }
-        else if (b1 == 1 && b5 == 1 && b9 == 1){
-            JOptionPane.showMessageDialog(frame, "Player X Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-            xCount1++;
-            xCount.setText(String.valueOf(xCount1));
-        }
-        else if (b3 == 1 && b5 == 1 && b7 == 1){
+        else if (b3 == 1 && b5 == 1 && b7 == 1){ //this is winning right to left diagonal
             JOptionPane.showMessageDialog(frame, "Player X Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             xCount1++;
             xCount.setText(String.valueOf(xCount1));
         }
 
         //For player O to win
-        if (b1 == 0 && b2 == 0 && b3 == 0){
+
+        //this is winning top row horizonal
+        if (b1 == 0 && b2 == 0 && b3 == 0){ //the logic is, when the all of these buttons are assigned O then O wins. the same logic is applied to all of the winning options and other buttons
             JOptionPane.showMessageDialog(frame, "Player O Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             oCount1++;
             oCount.setText(String.valueOf(oCount1));
         }
-        else if (b4 == 0 && b5 == 0 && b6 == 0){
+        else if (b4 == 0 && b5 == 0 && b6 == 0){ //this is winning middle row horizonal
             JOptionPane.showMessageDialog(frame, "Player O Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             oCount1++;
             oCount.setText(String.valueOf(oCount1));
         }
-        else if (b7 == 0 && b8 == 0 && b9 == 0){
+        else if (b7 == 0 && b8 == 0 && b9 == 0){ //this is winning bottom row horizonal
             JOptionPane.showMessageDialog(frame, "Player O Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             oCount1++;
             oCount.setText(String.valueOf(oCount1));
         }
-        else if (b1 == 0 && b4 == 0 && b7 == 0){
+        else if (b1 == 0 && b4 == 0 && b7 == 0){ //this is winning left column down
             JOptionPane.showMessageDialog(frame, "Player O Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             oCount1++;
             oCount.setText(String.valueOf(oCount1));
         }
-        else if (b2 == 0 && b5 == 0 && b8 == 0){
+        else if (b2 == 0 && b5 == 0 && b8 == 0){ //this is winning middle column down
             JOptionPane.showMessageDialog(frame, "Player O Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             oCount1++;
             oCount.setText(String.valueOf(oCount1));
         }
-        else if (b3 == 0 && b6 == 0 && b9 == 0){
+        else if (b3 == 0 && b6 == 0 && b9 == 0){ //this is winning right column down
             JOptionPane.showMessageDialog(frame, "Player O Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             oCount1++;
             oCount.setText(String.valueOf(oCount1));
         }
-        else if (b1 == 0 && b5 == 0 && b9 == 0){
+        else if (b1 == 0 && b5 == 0 && b9 == 0){ //this is winning left to right diagonal
             JOptionPane.showMessageDialog(frame, "Player O Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             oCount1++;
             oCount.setText(String.valueOf(oCount1));
         }
-        else if (b3 == 0 && b5 == 0 && b7 == 0){
+        else if (b3 == 0 && b5 == 0 && b7 == 0){ //this is winning right to left diagonal
             JOptionPane.showMessageDialog(frame, "Player O Wins", "Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
             oCount1++;
             oCount.setText(String.valueOf(oCount1));
@@ -179,12 +183,12 @@ public class TicTacToe {
                 if (startGame.equalsIgnoreCase("X")){
                     btn1.setForeground(Color.RED); //here we made the color red for the button
                     b1 = 1; //we do this so it is easier to set up the winning options. so if button 1 is clicked, that is X and it basically holds a 1
-                    i++;
+                    i++; //here we are incrementing the number of times X is placed by 1. the same logic is applied for all the buttons
                 }
                 else {
                     btn1.setForeground(Color.blue); //here we are assinging player 2 (O) to be blue
                     b1 = 0; //the same logic is followed for the O winning options. But this time, O holds a 0
-                    i++;
+                    i++; //here we are incrementing the number of times O is placed by 1. the same logic is applied for all the buttons
                 }
                 choosePlayer(); //this is important because we need this because this will select if we need to set text O or X. so everytime a user presses a button we call this function to see which image (X or O) will be placed
                 winningGame(); //we call this function to see is anyone wins after placing a move
@@ -474,7 +478,7 @@ public class TicTacToe {
                 btn7.setText(null);
                 btn8.setText(null);
                 btn9.setText(null);
-                b1 = 10;
+                b1 = 10; //when we press we the reset button, we have to reset the values for the variables. this is why I am assigning 10 again to all the variables
                 b2 = 10;
                 b3 = 10;
                 b4 = 10;
@@ -483,7 +487,7 @@ public class TicTacToe {
                 b7 = 10;
                 b8 = 10;
                 b9 = 10;
-                i = 0;
+                i = 0; //we have to reset all the times the values are placed to 0
             }
         });
         btnReset.setBackground(Color.BLACK);
@@ -491,4 +495,3 @@ public class TicTacToe {
         panel_14.add(btnReset, BorderLayout.CENTER);
     }
 }
-//stopped at 25:48
